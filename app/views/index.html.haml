@@ -1,13 +1,13 @@
 %h1
-  =msg
-  %small
-    Welcome to the TerrorDome
+  Streaks
 .hr
-  %form{role: "form"}
-    .form-group
-      %label{for: "name"}
-        Name
-      %input.form-control{type: "text", name:"name", placeholder:"Enter your name"}
-    %button.btn.btn-default{type:"submit"}
-      Submit
+-users.each do |user|
+  .user
+    %h4
+      %a{href: "#{url_for("/user/#{user.id}")}"}
+        =user.name
+    -user.streaks.each do |streak|
+      %a{href: "#{url_for("/streak/#{streak.id}")}"}
+        =streak.title
+  
 :javascript
