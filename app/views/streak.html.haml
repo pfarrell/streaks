@@ -1,1 +1,23 @@
-Streak
+%h1
+  =streak.title
+%hr
+  %form.form-inline{action: "#{url_for("/entry")}", method: "POST"}
+    %input{type: "hidden", name: "streak_id", value: "#{streak.id}"}
+    -streak.definition.each do |defi|
+      -puts defi.inspect
+      .form-group
+        %label{for: "#{defi.name}"}
+          =defi.name
+        %input.form-control{type: "text", name: "#{defi.name}", id: "#{defi.name}"}
+      %button.btn.btn-default{type: "submit"}
+        Save
+%hr
+-unless streak.entries.nil? || streak.entries.empty?
+  -streak.entries.each do |entry|
+    .entry
+      -entry.blurb.each do |blurb|
+        -blurb.each do |k,v|
+          =v
+
+
+ 
