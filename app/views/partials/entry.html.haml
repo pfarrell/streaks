@@ -7,5 +7,7 @@
 %script{:type => "text/javascript", :src => "#{url_for('/libs/jquery-ui/jquery-ui.min.js')}"}
 :javascript
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+    $( "#datepicker" ).datepicker("setDate", "-0d");
   });
+
