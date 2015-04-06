@@ -6,7 +6,6 @@
     %h4
       %a{href: "#{url_for("/user/#{user.id}")}"}
         =user.name
-      %hr
     -user.streaks.each do |streak|
       .streak
         %a{href: "#{url_for("/streak/#{streak.id}")}"}
