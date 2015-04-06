@@ -1,7 +1,5 @@
 class App < Sinatra::Application
   post '/entry' do
-    require 'byebug'
-    byebug
     streak = Streak[params[:streak_id]]
     entry = Entry.new
     blurb = []
