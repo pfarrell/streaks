@@ -1,13 +1,15 @@
 %h1
   Streaks
-.hr
+%hr
 -users.each do |user|
   .user
     %h4
       %a{href: "#{url_for("/user/#{user.id}")}"}
         =user.name
+      %hr
     -user.streaks.each do |streak|
-      %a{href: "#{url_for("/streak/#{streak.id}")}"}
-        =streak.title
+      .streak
+        %a{href: "#{url_for("/streak/#{streak.id}")}"}
+          =streak.title
   
 :javascript
