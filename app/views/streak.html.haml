@@ -13,4 +13,7 @@
     .entry
       -entry.blurb.each do |blurb|
         -blurb.each do |k,v|
-          =v
+          %span.value
+            =v
+        %span.value
+          =entry.created_at
