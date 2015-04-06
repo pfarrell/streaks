@@ -4,11 +4,7 @@
   %form.form-inline{action: "#{url_for("/entry")}", method: "POST"}
     %input{type: "hidden", name: "streak_id", value: "#{streak.id}"}
     -streak.definition.each do |defi|
-      -puts defi.inspect
-      .form-group
-        %label{for: "#{defi.name}"}
-          =defi.name
-        %input.form-control{type: "text", name: "#{defi.name}", id: "datepicker"}
+      =haml :'partials/entry', locals: {defi: defi}
       %button.btn.btn-default{type: "submit"}
         Save
 %hr
@@ -18,8 +14,3 @@
       -entry.blurb.each do |blurb|
         -blurb.each do |k,v|
           =v
-%script{:type => "text/javascript", :src => "#{url_for('/libs/jquery-ui/jquery-ui.min.js')}"}
-:javascript
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
