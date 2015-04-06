@@ -2,7 +2,8 @@
   "name": "APP",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "3.3.4"
+    "bootstrap": "3.3.4",
+    "jquery-ui": "1.11.4"
   },
   "homepage": "https://github.com/pfarrell/sinatra-shell",
   "authors": [

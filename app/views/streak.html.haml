@@ -8,7 +8,7 @@
       .form-group
         %label{for: "#{defi.name}"}
           =defi.name
-        %input.form-control{type: "text", name: "#{defi.name}", id: "#{defi.name}"}
+        %input.form-control{type: "text", name: "#{defi.name}", id: "datepicker"}
       %button.btn.btn-default{type: "submit"}
         Save
 %hr
@@ -18,6 +18,8 @@
       -entry.blurb.each do |blurb|
         -blurb.each do |k,v|
           =v
-
-
- 
+%script{:type => "text/javascript", :src => "#{url_for('/libs/jquery-ui/jquery-ui.min.js')}"}
+:javascript
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
