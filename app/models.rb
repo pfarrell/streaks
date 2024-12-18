@@ -2,7 +2,7 @@ require 'sequel'
 require 'logger'
 
 $console = ENV['RACK_ENV'] == 'development' ? Logger.new(STDOUT) : nil
-DB = Sequel.connect(ENV['PIGEON_DB'] || 'postgres://localhost/streaks',logger: $console)
+DB = Sequel.connect(ENV['STREAKS_DB'] || 'postgres://localhost/streaks',logger: $console)
 
 DB.sql_log_level = :debug
 DB.extension(:pagination)

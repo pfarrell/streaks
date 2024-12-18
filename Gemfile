@@ -22,3 +22,5 @@ group :development do
   gem 'byebug'
   gem 'shotgun'
 end
+
+gem "webrick", "~> 1.9"
